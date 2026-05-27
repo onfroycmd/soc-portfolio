@@ -1,18 +1,31 @@
 # 💻 System Operacyjny — Notatki SOC
 
-## OS jako menedżer komputera
+## 19 — System Operacyjny — Co to Jest
 
-> OS działa między Tobą, aplikacjami a sprzętem. Bez niego komputer to kupka plastiku.
+> OS = niewidzialny menedżer komputera. Działa między Tobą, aplikacjami a sprzętem.
 
-| Funkcja OS | Co to znaczy |
-|-----------|-------------|
-| Zarządzanie procesami | Uruchamia i zamyka aplikacje |
-| Zarządzanie pamięcią (RAM) | Każda aplikacja dostaje swój obszar |
-| Zarządzanie plikami | Wie gdzie leży każdy plik |
-| Zarządzanie użytkownikami | Twoje pliki niewidoczne dla innych kont |
-| Zarządzanie urządzeniami | Automatycznie rozpoznaje mysz, pendrive |
+| Funkcja | Co to znaczy |
+|---------|-------------|
+| Uruchamia programy | Otwiera i zamyka aplikacje |
+| Zarządza pamięcią | Pilnuje żeby programy sobie nie przeszkadzały |
+| Obsługuje urządzenia | Klawiatura, mysz, ekran |
+| Zarządza plikami | Zapisuje i odczytuje dane z dysku |
 
-## Kernel vs Przestrzeń użytkownika
+---
+
+## 20 — Pięć Obowiązków OS
+
+| # | Obowiązek | SOC Alert |
+|---|-----------|----------|
+| 1 | **Zarządzanie procesami** | Nieznany proces = możliwy **malware** |
+| 2 | **Zarządzanie pamięcią (RAM)** | Gdy brakuje → pamięć wirtualna (dysk) |
+| 3 | **Zarządzanie plikami** | Uprawnienia "tylko do odczytu" chronią pliki systemowe |
+| 4 | **Zarządzanie użytkownikami** | Nieautoryzowane konto = **kompromitacja systemu** |
+| 5 | **Zarządzanie urządzeniami** | OS automatycznie rozpoznaje nowy sprzęt |
+
+---
+
+## 21 — Przestrzeń Jądra vs Przestrzeń Użytkownika
 
 | | Przestrzeń jądra | Przestrzeń użytkownika |
 |-|-----------------|----------------------|
@@ -21,16 +34,28 @@
 | Błąd = | Crash całego systemu | Pada tylko ta aplikacja |
 
 ```
-Aplikacja → Wywołanie systemowe (syscall) → Kernel sprawdza → Kernel wykonuje → Wynik
+Aplikacja → Syscall → Kernel sprawdza → Kernel wykonuje → Wynik wraca
 ```
 
-## Mechanizmy bezpieczeństwa OS
-
-| Mechanizm | SOC Alert |
-|-----------|----------|
-| Uwierzytelnianie | Wiele nieudanych logowań = **brute force** |
-| Uprawnienia | Zwykły user z uprawnieniami admina = **eskalacja uprawnień** |
-| Izolacja procesów | Wirus w przeglądarce nie sięga do plików systemowych |
-| Ochrona systemu | Malware ma utrudnione nadpisanie plików systemowych |
-
 > 🚨 **Kernel exploit** = atak na jądro = pełne przejęcie maszyny — najgroźniejszy typ ataku!
+
+---
+
+## 22 — OS jako Fundament Bezpieczeństwa
+
+| Mechanizm | Co robi | SOC Alert |
+|-----------|---------|----------|
+| **Uwierzytelnianie** | Weryfikuje kim jesteś | Wiele nieudanych logowań = **brute force** |
+| **Uprawnienia** | Kontroluje co możesz robić | Zwykły user z uprawnieniami admina = **eskalacja uprawnień** |
+| **Izolacja** | Każdy program w swoim "pudełku" | Wirus w przeglądarce nie sięga do plików systemowych |
+| **Ochrona systemu** | Blokuje zmiany w krytycznych plikach | Malware ma utrudnione nadpisanie plików |
+
+**Ściągawka:**
+
+| Pojęcie | Co to znaczy |
+|---------|-------------|
+| **OS** | Menedżer całego komputera |
+| **Kernel** | Serce OS — pełna władza nad sprzętem |
+| **Syscall** | Sposób w jaki aplikacja prosi kernel o pomoc |
+| **Kernel exploit** | Atak na jądro = pełne przejęcie systemu |
+| **Eskalacja uprawnień** | Zdobycie wyższych uprawnień niż dozwolone |
