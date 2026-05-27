@@ -2,10 +2,9 @@
 
 ![Status](https://img.shields.io/badge/Status-W%20trakcie%20nauki-00d4ff?style=flat-square)
 ![Goal](https://img.shields.io/badge/Cel-Junior%20SOC%20Analyst%20%7C%202026-a855f7?style=flat-square)
-![Platform](https://img.shields.io/badge/Platforma-TryHackMe%20%7C%20LabEx-00ff9f?style=flat-square)
+![Platform](https://img.shields.io/badge/Platforma-TryHackMe%20%7C%20HackTheBox-00ff9f?style=flat-square)
 
-> Samouk. 3 tygodnie nauki. Buduję to repo jako dowód swojej drogi do pierwszej pracy jako Junior SOC Analyst.
-> Każdy commit to realny postęp — bez studiów, bez bootcampu.
+> No degree. No bootcamp. Just me, a keyboard and a goal — Junior SOC Analyst.
 
 ---
 
@@ -26,7 +25,7 @@
 - Sieci: TCP/IP, DNS, HTTP/S, nagłówki, kody odpowiedzi
 - OS: kernel, przestrzeń użytkownika, uprawnienia, procesy
 - Infrastruktura: Load Balancer, WAF, CDN, wirtualizacja, chmura
-- Narzędzia: TryHackMe, LabEx, Linux Journey
+- Narzędzia: TryHackMe, HackTheBox
 
 ---
 
